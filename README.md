@@ -35,7 +35,7 @@ Check the [web-demo](https://blitzarx1.github.io/egui_graphs) for the comprehens
 
 ## Status
 
-The project is on track for a stable release v1.0.0. For the moment, breaking releases are very possible.
+The project is not in active development. Feel free to fork it and tweak for your needs.
 
 ## Examples
 
