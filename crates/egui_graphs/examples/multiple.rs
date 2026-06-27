@@ -31,7 +31,7 @@ impl App for BasicApp {
         Panel::left("left_panel")
             .default_size(available_width / 3.)
             .resizable(true)
-            .show_inside(ui, |ui| {
+            .show(ui, |ui| {
                 ui.allocate_ui_with_layout(ui.max_rect().size(), Layout::default(), |ui| {
                     ui.add(&mut DefaultGraphView::new(&mut self.g1).with_id(id1.clone()));
                 });
@@ -39,10 +39,10 @@ impl App for BasicApp {
         Panel::right("right_panel")
             .default_size(available_width / 3.)
             .resizable(true)
-            .show_inside(ui, |ui| {
+            .show(ui, |ui| {
                 ui.add(&mut DefaultGraphView::new(&mut self.g1).with_id(id1))
             });
-        CentralPanel::default().show_inside(ui, |ui| {
+        CentralPanel::default().show(ui, |ui| {
             ui.add(&mut DefaultGraphView::new(&mut self.g2).with_id(id2))
         });
     }

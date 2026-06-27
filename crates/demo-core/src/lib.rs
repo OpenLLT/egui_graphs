@@ -1168,7 +1168,7 @@ impl App for DemoApp {
             egui::Panel::right("right")
                 .default_size(SIDE_PANEL_WIDTH)
                 .min_size(SIDE_PANEL_WIDTH)
-                .show_inside(ui, |ui| {
+                .show(ui, |ui| {
                     // Tabs header using selectable labels
                     ui.horizontal(|ui| {
                         ui.selectable_value(
@@ -1189,7 +1189,7 @@ impl App for DemoApp {
         }
 
         // Central graph view
-        egui::CentralPanel::default().show_inside(ui, |ui| {
+        egui::CentralPanel::default().show(ui, |ui| {
             if self.reset_requested {
                 self.reset_all(ui);
                 self.reset_requested = false;

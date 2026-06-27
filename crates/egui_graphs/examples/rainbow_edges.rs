@@ -16,7 +16,7 @@ impl RainbowEdgesApp {
 
 impl App for RainbowEdgesApp {
     fn ui(&mut self, ui: &mut egui::Ui, _: &mut eframe::Frame) {
-        egui::CentralPanel::default().show_inside(ui, |ui| {
+        egui::CentralPanel::default().show(ui, |ui| {
             ui.add(
                 &mut GraphView::<_, _, _, _, _, RainbowEdgeShape>::new(&mut self.g)
                     .with_interactions(

@@ -39,7 +39,7 @@ impl LabelChangeApp {
     }
 
     fn render(&mut self, ui: &mut egui::Ui) {
-        Panel::right("right_panel").show_inside(ui, |ui| {
+        Panel::right("right_panel").show(ui, |ui| {
             ui.label("Change Label");
             ui.add_enabled_ui(
                 self.selected_node.is_some() || self.selected_edge.is_some(),
@@ -53,7 +53,7 @@ impl LabelChangeApp {
                 self.reset(ui);
             }
         });
-        CentralPanel::default().show_inside(ui, |ui| {
+        CentralPanel::default().show(ui, |ui| {
             let widget = &mut DefaultGraphView::new(&mut self.g)
                 .with_interactions(
                     &SettingsInteraction::default()
